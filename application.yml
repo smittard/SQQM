@@ -1,0 +1,3 @@
+logging.level:
+ org.mitmit: DEBUG
+ org.springframework: INFO
