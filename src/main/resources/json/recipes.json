@@ -1,0 +1,30 @@
+[
+  { "id":"1",
+    "title":"Pâtes au pesto / pignons de pin",
+    "type":"PATES_RIZ"
+  },
+  { "id":"2",
+    "title":"One pot pasta tomates / mascarpone",
+    "type":"PATES_RIZ"
+  },
+  { "id":"3",
+    "title":"Riz Cantonais",
+    "type":"PATES_RIZ"
+  },
+  { "id":"4",
+    "title":"Salade de gnocchis au bacon et tomates cerises",
+    "type":"SALADE"
+  },
+  { "id":"5",
+    "title":"Salade de pâtes à l'italienne",
+    "type":"SALADE"
+  },
+  { "id":"6",
+    "title":"Tarte sèche oignons/feta",
+    "type":"TARTE_QUICHE"
+  },
+  { "id":"7",
+    "title":"quiche fondante tomate/mozza",
+    "type":"TARTE_QUICHE"
+  }
+]
