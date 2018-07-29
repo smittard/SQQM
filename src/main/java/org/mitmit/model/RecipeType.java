@@ -16,9 +16,7 @@ public enum RecipeType {
 
     @Override
     public String toString() {
-        return "RecipeType{" +
-                "typeName='" + typeName + '\'' +
-                '}';
+        return typeName;
     }
 
 }
