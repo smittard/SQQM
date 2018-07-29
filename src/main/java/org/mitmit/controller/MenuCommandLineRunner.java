@@ -16,6 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -35,9 +37,7 @@ public class MenuCommandLineRunner implements CommandLineRunner {
     //private static final Logger MSGLOG = getLogger("application");
     private static final Logger LOG = getLogger(MenuCommandLineRunner.class);
 
-    @Autowired
-    private RecipeService recipeService;
-
+    private final RecipeService recipeService;
     //--------------------------------
     // protected properties
 
@@ -48,6 +48,11 @@ public class MenuCommandLineRunner implements CommandLineRunner {
     //  Constructors
     ///////////////////////////////////////////////////////////////////////////////
 
+    @Autowired
+    public MenuCommandLineRunner(RecipeService recipeService) {
+        this.recipeService = recipeService;
+    }
+
     ///////////////////////////////////////////////////////////////////////////////
     //  Methods
     ///////////////////////////////////////////////////////////////////////////////
@@ -55,8 +60,9 @@ public class MenuCommandLineRunner implements CommandLineRunner {
     //--------------------------------
     // public methods
     @Override
-    public void run(String... args){
-        LOG.warn("Sarah Qu'est ce Qu'on Mange ?");
+    public void run(String... args) throws IOException {
+        StringBuilder lastGen = recipeService.getMenu();
+        LOG.info("Menus de la dernière generation : {}", String.valueOf(lastGen));
         LOG.warn("Générer le menu de la semaine? (y/n)");
         Scanner sc = new Scanner(System.in);
         String input = "n";

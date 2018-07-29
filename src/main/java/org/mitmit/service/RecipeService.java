@@ -10,18 +10,25 @@
 //
 package org.mitmit.service;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Collectors;
+
+import javax.annotation.PostConstruct;
+
 import org.mitmit.model.Recipe;
 import org.mitmit.model.RecipeType;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
@@ -42,7 +49,9 @@ public class RecipeService {
 
     //--------------------------------
     // protected properties
-    List<Recipe> recipeList = new ArrayList<>();
+    private List<Recipe> initialRecipeList = new ArrayList<>();
+    private ObjectMapper jsonMapper;
+    private ObjectWriter jsonWriter;
 
     //--------------------------------
     // getter & setter properties
@@ -53,10 +62,8 @@ public class RecipeService {
 
     @PostConstruct
     public void init() throws IOException {
-        ObjectMapper jsonMapper = new ObjectMapper();
-        TypeReference<List<Recipe>> typeReference = new TypeReference<List<Recipe>>(){};
-        InputStream inputStream = TypeReference.class.getResourceAsStream("/json/recipes.json");
-        recipeList = jsonMapper.readValue(inputStream,typeReference);
+        jsonMapper = new ObjectMapper();
+        jsonWriter = jsonMapper.writer().withDefaultPrettyPrinter();
     }
 
     ///////////////////////////////////////////////////////////////////////////////
@@ -66,11 +73,34 @@ public class RecipeService {
     //--------------------------------
     // public methods
 
-    public void generateMenu() {
-        LOG.info("Recipes :");
-        for (Recipe recipe : recipeList){
-            LOG.info(recipe.toString());
+    /**
+     *
+     * @return A string containing the previous menus generated
+     * @throws IOException for IOFile exceptions
+     */
+    public StringBuilder getMenu() throws IOException {
+        File previousWeek = new File("./menu_semaine.json");
+        List<Recipe> overview = readJson(previousWeek);
+        return prettyPrint(overview);
+    }
+
+    /**
+     * Extract Weekly menus from working base and write it into JSON file
+     * @throws IOException for IOFile exceptions
+     */
+    public void generateMenu() throws IOException {
+        this.getWork();
+        List<Recipe> menu = new ArrayList<>();
+
+        for (RecipeType type: RecipeType.values()) {
+            Recipe plat = getMatchingRecipe(type);
+            if (plat != null) menu.add(plat);
         }
+
+        LOG.info("le menu ==> {}", prettyPrint(menu));
+        jsonWriter.writeValue(new File("./menu_semaine.json"), menu);
+
+        this.saveWork();
     }
 
     //--------------------------------
@@ -78,6 +108,87 @@ public class RecipeService {
 
     //--------------------------------
     // private methods
+
+    /**
+     * Load working base
+     * @throws IOException for IOFile exceptions
+     */
+    private void getWork() throws IOException {
+        File initialFile = new File("./recipesWork.json");
+        if (! initialFile.exists()) {
+            LOG.warn("Init recipes list");
+            initialFile = new File("./recipes.json");
+        }
+        initialRecipeList = readJson(initialFile);
+        if (initialRecipeList.isEmpty()) {
+            LOG.warn("Reset recipes list");
+            initialFile = new File("./recipes.json");
+            initialRecipeList = readJson(initialFile);
+        }
+        LOG.debug("initialRecipeList ==> {}", prettyPrint(initialRecipeList));
+    }
+
+    /**
+     * Load list from JSON file
+     * @param input the JSON file to load
+     * @return List of elements readed from JSON file
+     * @throws IOException for IOFile exceptions
+     */
+    private List<Recipe> readJson (File input) throws IOException {
+        InputStream inputStream = new FileInputStream(input);
+        TypeReference<List<Recipe>> typeReference = new TypeReference<List<Recipe>>(){};
+        return jsonMapper.readValue(inputStream,typeReference);
+    }
+
+    /**
+     * This method extract a random recipe from working base for given parameter
+     * @param recipeType required recipe type
+     * @return A random recipe found in this type
+     */
+    private Recipe getMatchingRecipe(RecipeType recipeType) {
+        //Get all recipes from type recipeType
+        List<Recipe> filteredResult = initialRecipeList.stream()
+                .filter(recipe -> recipeType.equals(recipe.getType()))
+                .collect(Collectors.toList());
+        if (! filteredResult.isEmpty()) {
+            //Get random elt from the filtered list
+            Recipe result = filteredResult.get(ThreadLocalRandom.current().nextInt(filteredResult.size()));
+            LOG.debug("Recipe returned for type {} ==> {}", result.getType(), result.getTitle());
+            //Remove the get elt from working list
+            initialRecipeList.remove(result);
+            LOG.debug("initialRecipeList after remove ==> {}", initialRecipeList);
+            return result;
+        }
+        return null;
+    }
+
+    /**
+     * Save Working list into JSON file
+     * @throws IOException for IOFile exceptions
+     */
+    private void saveWork() throws IOException {
+        List<Recipe> recipeWork = new ArrayList<>(initialRecipeList);
+        LOG.debug("les recettes restantes ==> {}", prettyPrint(recipeWork));
+        jsonWriter.writeValue(new File("./recipesWork.json"), recipeWork);
+    }
+
+    /**
+     *
+     * @param overview the List to print
+     * @return formated String
+     */
+    private StringBuilder prettyPrint(List<Recipe> overview) {
+        StringBuilder res = new StringBuilder("\n");
+        if (overview.isEmpty()) res.append("Empty List");
+        for (Recipe r: overview) {
+            res.append("- ");
+            res.append(r.getTitle());
+            res.append(" (");
+            res.append(r.getType());
+            res.append(")\n");
+        }
+        return res;
+    }
 
     //--------------------------------
     // Getters & Setters
