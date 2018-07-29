@@ -21,10 +21,218 @@
   },
   { "id":"6",
     "title":"Tarte sèche oignons/feta",
-    "type":"TARTE_QUICHE"
+    "type":"TARTE_QUICHE_CAKE"
   },
   { "id":"7",
     "title":"quiche fondante tomate/mozza",
-    "type":"TARTE_QUICHE"
+    "type":"TARTE_QUICHE_CAKE"
+  },
+  { "id":"8",
+    "title":"Pâtes avec une sauce",
+    "type":"PATES_RIZ"
+  },
+  { "id":"9",
+    "title":"Risotto saumon feta",
+    "type":"PATES_RIZ"
+  },
+  { "id":"10",
+    "title":"Pâtes au coulis de courgettes",
+    "type":"PATES_RIZ"
+  },
+  { "id":"11",
+    "title":"Risotto aux champignons",
+    "type":"PATES_RIZ"
+  },
+  { "id":"12",
+    "title":"Tortis à pôeler primavera",
+    "type":"PATES_RIZ"
+  },
+  { "id":"13",
+    "title":"Risotto au chorizo",
+    "type":"PATES_RIZ"
+  },
+  { "id":"14",
+    "title":"Pâtes crevettes au lait de coco",
+    "type":"PATES_RIZ"
+  },
+  { "id":"15",
+    "title":"Taboulé maison",
+    "type":"SALADE"
+  },
+  { "id":"16",
+    "title":"Taboulé aux épices",
+    "type":"SALADE"
+  },
+  { "id":"16",
+    "title":"Salade de pommes de terre à l'italienne",
+    "type":"SALADE"
+  },
+  { "id":"17",
+    "title":"Soupe aux champignons, toasts chèvre",
+    "type":"SOUPE"
+  },
+  { "id":"18",
+    "title":"Soupe d'halloween",
+    "type":"SOUPE"
+  },
+  { "id":"19",
+    "title":"Salade pâtes/melon/mozza",
+    "type":"SALADE"
+  },
+  { "id":"20",
+    "title":"Salade chorizo/ebly/Tomates Cerises/Croutons",
+    "type":"SALADE"
+  },
+  { "id":"21",
+    "title":"Soupe & croutons",
+    "type":"SOUPE"
+  },
+  { "id":"22",
+    "title":"Galettes bretonnes",
+    "type":"GRATIN_CROQUE_OEUFS"
+  },
+  { "id":"23",
+    "title":"Salade coquillettes coppa/ricotta",
+    "type":"SALADE"
+  },
+  { "id":"24",
+    "title":"Salade coquillettes coppa/ricotta",
+    "type":"SALADE"
+  },
+  { "id":"25",
+    "title":"Tarte au thon",
+    "type":"TARTE_QUICHE_CAKE"
+  },
+  { "id":"26",
+    "title":"Quiche chorizo/chèvre/Tomates Cerises",
+    "type":"TARTE_QUICHE_CAKE"
+  },
+  { "id":"27",
+    "title":"Tarte aux poireaix",
+    "type":"TARTE_QUICHE_CAKE"
+  },
+  { "id":"28",
+    "title":"Cake jambon carotte",
+    "type":"TARTE_QUICHE_CAKE"
+  },
+  { "id":"29",
+    "title":"Quiche prunes/chèvre",
+    "type":"TARTE_QUICHE_CAKE"
+  },
+  { "id":"30",
+    "title":"Tarte courgettes/lardons",
+    "type":"TARTE_QUICHE_CAKE"
+  },
+  { "id":"31",
+    "title":"cake chèvre,figues et miel",
+    "type":"TARTE_QUICHE_CAKE"
+  },
+  { "id":"32",
+    "title":"Tarte oignons/raisins secs",
+    "type":"TARTE_QUICHE_CAKE"
+  },
+  { "id":"33",
+    "title":"Feuilletés chèvre/salade",
+    "type":"TARTE_QUICHE_CAKE"
+  },
+  { "id":"34",
+    "title":"Tarte feta/tomates cerises",
+    "type":"TARTE_QUICHE_CAKE"
+  },
+  { "id":"35",
+    "title":"pain perdu",
+    "type":"GRATIN_CROQUE_OEUFS"
+  },
+  { "id":"36",
+    "title":"croque monsieur saumon",
+    "type":"GRATIN_CROQUE_OEUFS"
+  },
+  { "id":"37",
+    "title":"gratin pommes de terre au saumon",
+    "type":"GRATIN_CROQUE_OEUFS"
+  },
+  { "id":"38",
+    "title":"gratin ravioles courgettes",
+    "type":"GRATIN_CROQUE_OEUFS"
+  },
+  { "id":"39",
+    "title":"gratin macaronis jambon/fromage",
+    "type":"GRATIN_CROQUE_OEUFS"
+  },
+  { "id":"40",
+    "title":"crumble de légumes",
+    "type":"GRATIN_CROQUE_OEUFS"
+  },
+  { "id":"41",
+    "title":"Feuilletés jambon/fromage",
+    "type":"GRATIN_CROQUE_OEUFS"
+  },
+  { "id":"42",
+    "title":"Croques au Thon",
+    "type":"GRATIN_CROQUE_OEUFS"
+  },
+  { "id":"43",
+    "title":"Croques monsieur",
+    "type":"GRATIN_CROQUE_OEUFS"
+  },
+  { "id":"44",
+    "title":"Gratin chou-fleu",
+    "type":"GRATIN_CROQUE_OEUFS"
+  },
+  { "id":"45",
+    "title":"Lasagnes chèvre/courgettes",
+    "type":"GRATIN_CROQUE_OEUFS"
+  },
+  { "id":"46",
+    "title":"gratin macaronis lardons/volaille/petits pois",
+    "type":"GRATIN_CROQUE_OEUFS"
+  },
+  { "id":"47",
+    "title":"Filet mignon de porc à l'ananas/riz",
+    "type":"MIDI"
+  },
+  { "id":"48",
+    "title":"Cabillaud sauce hollandaise/riz",
+    "type":"MIDI"
+  },
+  { "id":"49",
+    "title":"Steack/Haricots Verts",
+    "type":"MIDI"
+  },
+  { "id":"50",
+    "title":"Filet mignon de porc au miel/Pommes de terre",
+    "type":"MIDI"
+  },
+  { "id":"51",
+    "title":"Omelette espagnole",
+    "type":"GRATIN_CROQUE_OEUFS"
+  },
+  { "id":"52",
+    "title":"Poulet/légumes/pâtes",
+    "type":"MIDI"
+  },
+  { "id":"53",
+    "title":"Limande meunière/légumes/riz",
+    "type":"MIDI"
+  },
+  { "id":"54",
+    "title":"Oeuf au plat/gazpacho",
+    "type":"GRATIN_CROQUE_OEUFS"
+  },
+  { "id":"55",
+    "title":"Poulet à l'échalotte/purée",
+    "type":"MIDI"
+  },
+  { "id":"56",
+    "title":"Poulet au chorizo/carottes/riz",
+    "type":"MIDI"
+  },
+  { "id":"57",
+    "title":"Cabillaud au chorizo/gratin crumble de courgettes",
+    "type":"MIDI"
+  },
+  { "id":"58",
+    "title":"Bavette à l'échalotte/purée",
+    "type":"MIDI"
   }
 ]

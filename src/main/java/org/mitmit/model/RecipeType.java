@@ -6,7 +6,11 @@ package org.mitmit.model;
 public enum RecipeType {
     PATES_RIZ("PATES_RIZ"),
     SALADE("SALADE"),
-    TARTE_QUICHE("TARTE_QUICHE");
+    SOUPE("SOUPE"),
+    TARTE_QUICHE_CAKE("TARTE_QUICHE_CAKE"),
+    MIDI("MIDI"),
+    GRATIN_CROQUE_OEUFS("GRATIN_CROQUE_OEUFS")
+    ;
 
     private String typeName;
 
