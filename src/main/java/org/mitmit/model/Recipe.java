@@ -13,16 +13,12 @@ package org.mitmit.model;
 /**
  * @author mittard.
  */
-import javax.persistence.*;
 
-@Entity
 public class Recipe {
     ///////////////////////////////////////////////////////////////////////////////
     //  Properties
     ///////////////////////////////////////////////////////////////////////////////
 
-    @Id
-    @GeneratedValue( strategy = GenerationType.AUTO )
     private Long id;
     private String title;
     private RecipeType type;
