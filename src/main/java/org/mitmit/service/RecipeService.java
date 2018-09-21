@@ -15,15 +15,19 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.EnumSet;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
 import javax.annotation.PostConstruct;
 
+import org.mitmit.configuration.SqqmProperties;
 import org.mitmit.model.Recipe;
 import org.mitmit.model.RecipeType;
 import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -52,6 +56,14 @@ public class RecipeService {
     private List<Recipe> initialRecipeList = new ArrayList<>();
     private ObjectMapper jsonMapper;
     private ObjectWriter jsonWriter;
+    private List<RecipeType> filteredRecipe = new ArrayList<RecipeType>(EnumSet.allOf(RecipeType.class));
+
+    private final SqqmProperties props;
+
+    @Autowired
+    public RecipeService(SqqmProperties props) {
+        this.props = props;
+    }
 
     //--------------------------------
     // getter & setter properties
@@ -64,6 +76,9 @@ public class RecipeService {
     public void init() throws IOException {
         jsonMapper = new ObjectMapper();
         jsonWriter = jsonMapper.writer().withDefaultPrettyPrinter();
+        filteredRecipe.removeAll(props.getExcludeRecipeType());
+        LOG.debug("exclude-recipe-type : {}", props.getExcludeRecipeType());
+        LOG.info("liste des catégories : {}", filteredRecipe.toString());
     }
 
     ///////////////////////////////////////////////////////////////////////////////
@@ -92,7 +107,7 @@ public class RecipeService {
         this.getWork();
         List<Recipe> menu = new ArrayList<>();
 
-        for (RecipeType type: RecipeType.values()) {
+        for (RecipeType type: filteredRecipe) {
             Recipe plat = getMatchingRecipe(type);
             if (plat != null) menu.add(plat);
         }

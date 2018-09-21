@@ -4,6 +4,7 @@ package org.mitmit.model;
  * @author mittard.
  */
 public enum RecipeType {
+    NONE("NONE"),
     PATES_RIZ("PATES_RIZ"),
     SALADE("SALADE"),
     SOUPE("SOUPE"),

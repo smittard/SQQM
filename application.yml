@@ -8,3 +8,7 @@ spring:
   output:
     ansi:
       enabled: always
+sqqm:
+  exclude-recipe-type:
+    - NONE
+    - SOUPE
