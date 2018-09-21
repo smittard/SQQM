@@ -15,7 +15,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
@@ -54,6 +53,7 @@ public class RecipeService {
     //--------------------------------
     // protected properties
     private List<Recipe> initialRecipeList = new ArrayList<>();
+    private List<Recipe> workRecipeList = new ArrayList<>();
     private ObjectMapper jsonMapper;
     private ObjectWriter jsonWriter;
     private List<RecipeType> filteredRecipe = new ArrayList<RecipeType>(EnumSet.allOf(RecipeType.class));
@@ -77,6 +77,7 @@ public class RecipeService {
         jsonMapper = new ObjectMapper();
         jsonWriter = jsonMapper.writer().withDefaultPrettyPrinter();
         filteredRecipe.removeAll(props.getExcludeRecipeType());
+        filteredRecipe.remove(RecipeType.MIDI);
         LOG.debug("exclude-recipe-type : {}", props.getExcludeRecipeType());
         LOG.info("liste des catégories : {}", filteredRecipe.toString());
     }
@@ -107,9 +108,28 @@ public class RecipeService {
         this.getWork();
         List<Recipe> menu = new ArrayList<>();
 
-        for (RecipeType type: filteredRecipe) {
+        int dinnersCount = props.getDinnerNumber();
+        List<RecipeType> mylist = new ArrayList<>(filteredRecipe);
+        LOG.debug("Generation de {} diners", props.getDinnerNumber());
+        while (dinnersCount != 0) {
+            if (mylist.isEmpty()) {
+                mylist = new ArrayList<>(filteredRecipe);
+            }
+            int random = ThreadLocalRandom.current().nextInt(mylist.size());
+            RecipeType type = mylist.get(random);
+            LOG.debug("Get Type {}", type);
             Recipe plat = getMatchingRecipe(type);
             if (plat != null) menu.add(plat);
+            mylist.remove(type);
+            dinnersCount --;
+        }
+
+        int lunchsCount = props.getLunchNumber();
+        LOG.debug("Generation de {} midis", lunchsCount);
+        while (lunchsCount != 0) {
+            Recipe plat = getMatchingRecipe(RecipeType.MIDI);
+            if (plat != null) menu.add(plat);
+            lunchsCount --;
         }
 
         LOG.info("le menu ==> {}", prettyPrint(menu));
@@ -129,18 +149,21 @@ public class RecipeService {
      * @throws IOException for IOFile exceptions
      */
     private void getWork() throws IOException {
-        File initialFile = new File("./recipesWork.json");
-        if (! initialFile.exists()) {
-            LOG.warn("Init recipes list");
-            initialFile = new File("./recipes.json");
-        }
+        LOG.debug("Load working base");
+        File initialFile = new File("./recipes.json");
         initialRecipeList = readJson(initialFile);
-        if (initialRecipeList.isEmpty()) {
-            LOG.warn("Reset recipes list");
-            initialFile = new File("./recipes.json");
-            initialRecipeList = readJson(initialFile);
+        File workFile = new File("./recipesWork.json");
+        if (! workFile.exists()) {
+            LOG.warn("Init recipes list");
+            workFile = initialFile;
         }
-        LOG.debug("initialRecipeList ==> {}", prettyPrint(initialRecipeList));
+        workRecipeList = readJson(workFile);
+        if (workRecipeList.isEmpty()) {
+            LOG.warn("Reset recipes full list");
+            workFile = new File("./recipes.json");
+            workRecipeList = readJson(workFile);
+        }
+        LOG.debug("workRecipeList loaded==> {}", prettyPrint(workRecipeList));
     }
 
     /**
@@ -161,20 +184,33 @@ public class RecipeService {
      * @return A random recipe found in this type
      */
     private Recipe getMatchingRecipe(RecipeType recipeType) {
+        Recipe result = null;
         //Get all recipes from type recipeType
-        List<Recipe> filteredResult = initialRecipeList.stream()
+        List<Recipe> filteredResult = workRecipeList.stream()
                 .filter(recipe -> recipeType.equals(recipe.getType()))
                 .collect(Collectors.toList());
         if (! filteredResult.isEmpty()) {
             //Get random elt from the filtered list
-            Recipe result = filteredResult.get(ThreadLocalRandom.current().nextInt(filteredResult.size()));
+            result = filteredResult.get(ThreadLocalRandom.current().nextInt(filteredResult.size()));
             LOG.debug("Recipe returned for type {} ==> {}", result.getType(), result.getTitle());
             //Remove the get elt from working list
-            initialRecipeList.remove(result);
-            LOG.debug("initialRecipeList after remove ==> {}", initialRecipeList);
-            return result;
+            workRecipeList.remove(result);
+            LOG.debug("workRecipeList after remove ==> {}", workRecipeList);
+        } else {
+            LOG.warn("Reset Recipe list for this type.");
+            List<Recipe> resultToPopulate = initialRecipeList.stream()
+                    .filter(recipe -> recipeType.equals(recipe.getType()))
+                    .collect(Collectors.toList());
+            //Get random elt from the list
+            result = resultToPopulate.get(ThreadLocalRandom.current().nextInt(resultToPopulate.size()));
+            LOG.debug("Recipe returned for type {} ==> {}", result.getType(), result.getTitle());
+            //Remove the get elt from list
+            resultToPopulate.remove(result);
+            //Update working list to populate this type
+            workRecipeList.addAll(resultToPopulate);
+            LOG.debug("workRecipeList after populate ==> {}", workRecipeList);
         }
-        return null;
+        return result;
     }
 
     /**
@@ -182,7 +218,7 @@ public class RecipeService {
      * @throws IOException for IOFile exceptions
      */
     private void saveWork() throws IOException {
-        List<Recipe> recipeWork = new ArrayList<>(initialRecipeList);
+        List<Recipe> recipeWork = new ArrayList<>(workRecipeList);
         LOG.debug("les recettes restantes ==> {}", prettyPrint(recipeWork));
         jsonWriter.writeValue(new File("./recipesWork.json"), recipeWork);
     }

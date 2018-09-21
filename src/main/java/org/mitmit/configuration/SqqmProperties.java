@@ -17,9 +17,9 @@ public class SqqmProperties {
 
     private List<RecipeType> excludeRecipeType;
 
-    private int dinnerNumber;
+    private int dinnerNumber = 6;
 
-    private int lunchNumber;
+    private int lunchNumber = 2;
 
     //--------------------------------
     // Getters & Setters

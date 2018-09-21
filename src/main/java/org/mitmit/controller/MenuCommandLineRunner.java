@@ -10,16 +10,16 @@
 //
 package org.mitmit.controller;
 
-import org.mitmit.service.RecipeService;
-import org.slf4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Service;
-
-import java.io.File;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import org.mitmit.service.RecipeService;
+import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.stereotype.Service;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
@@ -27,7 +27,7 @@ import static org.slf4j.LoggerFactory.getLogger;
  * @author mittard.
  */
 @Service
-public class MenuCommandLineRunner implements CommandLineRunner {
+public class MenuCommandLineRunner implements ApplicationRunner {
     ///////////////////////////////////////////////////////////////////////////////
     //  Properties
     ///////////////////////////////////////////////////////////////////////////////
@@ -60,7 +60,7 @@ public class MenuCommandLineRunner implements CommandLineRunner {
     //--------------------------------
     // public methods
     @Override
-    public void run(String... args) throws IOException {
+    public void run(ApplicationArguments args) throws IOException {
         StringBuilder lastGen = recipeService.getMenu();
         LOG.info("Menus de la dernière generation : {}", String.valueOf(lastGen));
         LOG.warn("Générer le menu de la semaine? (y/n)");

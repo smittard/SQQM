@@ -11,4 +11,4 @@ spring:
 sqqm:
   exclude-recipe-type:
     - NONE
-    - SOUPE
+    - SOUPE
