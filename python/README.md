@@ -73,3 +73,23 @@ Le script se déroule en trois étapes :
 ## Ajouter des recettes
 
 Il suffit d'éditer `recettes.json` en respectant le format ci-dessus. Les nouveaux plats seront automatiquement pris en compte au prochain lancement.
+
+## Utilisation sur Windows (sans environnement de développement)
+
+### 1. Installer Python
+
+Ouvrir le **Microsoft Store**, rechercher **Python 3** et cliquer sur Installer. Aucun droit administrateur requis.
+
+### 2. Récupérer les fichiers
+
+Copier `sqqm.py` et `recettes.json` dans le même dossier sur le poste Windows (par exemple `C:\Users\<nom>\Documents\SQQM\`).
+
+### 3. Lancer le script
+
+Dans l'explorateur de fichiers, naviguer jusqu'au dossier, puis **Shift + clic droit** > **"Ouvrir la fenêtre PowerShell ici"** et lancer :
+
+```
+python sqqm.py
+```
+
+> Le fichier de liste de courses exporté (`courses_YYYY-MM-DD.txt`) sera créé dans le même dossier que le script.
