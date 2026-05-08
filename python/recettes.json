@@ -1,0 +1,339 @@
+{
+  "recettes": [
+    {
+      "id": 1,
+      "titre": "Poulet rôti aux légumes",
+      "categorie": "midi",
+      "mois_saison": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "ingredients": [
+        {"nom": "poulet entier", "quantite": 1, "unite": "pièce", "rayon": "boucherie"},
+        {"nom": "pommes de terre", "quantite": 800, "unite": "g", "rayon": "fruits et légumes"},
+        {"nom": "carottes", "quantite": 3, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "oignon", "quantite": 1, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "ail", "quantite": 4, "unite": "gousse", "rayon": "fruits et légumes"},
+        {"nom": "huile d'olive", "quantite": 3, "unite": "cuillère à soupe", "rayon": "épicerie"},
+        {"nom": "thym", "quantite": 1, "unite": "bouquet", "rayon": "épicerie"},
+        {"nom": "sel", "quantite": 1, "unite": "pincée", "rayon": "épicerie"}
+      ]
+    },
+    {
+      "id": 2,
+      "titre": "Gratin dauphinois",
+      "categorie": "midi",
+      "mois_saison": [9, 10, 11, 12, 1, 2, 3],
+      "ingredients": [
+        {"nom": "pommes de terre", "quantite": 1200, "unite": "g", "rayon": "fruits et légumes"},
+        {"nom": "crème fraîche épaisse", "quantite": 400, "unite": "ml", "rayon": "crèmerie"},
+        {"nom": "lait", "quantite": 200, "unite": "ml", "rayon": "crèmerie"},
+        {"nom": "gruyère râpé", "quantite": 100, "unite": "g", "rayon": "crèmerie"},
+        {"nom": "ail", "quantite": 2, "unite": "gousse", "rayon": "fruits et légumes"},
+        {"nom": "noix de muscade", "quantite": 1, "unite": "pincée", "rayon": "épicerie"},
+        {"nom": "sel", "quantite": 1, "unite": "pincée", "rayon": "épicerie"},
+        {"nom": "poivre", "quantite": 1, "unite": "pincée", "rayon": "épicerie"}
+      ]
+    },
+    {
+      "id": 3,
+      "titre": "Salade niçoise",
+      "categorie": "midi",
+      "mois_saison": [4, 5, 6, 7, 8, 9],
+      "ingredients": [
+        {"nom": "salade verte", "quantite": 1, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "tomates", "quantite": 4, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "thon en boîte", "quantite": 2, "unite": "boîte", "rayon": "épicerie"},
+        {"nom": "oeufs", "quantite": 4, "unite": "pièce", "rayon": "crèmerie"},
+        {"nom": "haricots verts", "quantite": 300, "unite": "g", "rayon": "fruits et légumes"},
+        {"nom": "olives noires", "quantite": 100, "unite": "g", "rayon": "épicerie"},
+        {"nom": "anchois", "quantite": 1, "unite": "boîte", "rayon": "épicerie"},
+        {"nom": "huile d'olive", "quantite": 4, "unite": "cuillère à soupe", "rayon": "épicerie"},
+        {"nom": "vinaigre", "quantite": 1, "unite": "cuillère à soupe", "rayon": "épicerie"}
+      ]
+    },
+    {
+      "id": 4,
+      "titre": "Quiche lorraine",
+      "categorie": "midi",
+      "mois_saison": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "ingredients": [
+        {"nom": "pâte brisée", "quantite": 1, "unite": "rouleau", "rayon": "crèmerie"},
+        {"nom": "lardons fumés", "quantite": 200, "unite": "g", "rayon": "boucherie"},
+        {"nom": "oeufs", "quantite": 3, "unite": "pièce", "rayon": "crèmerie"},
+        {"nom": "crème fraîche liquide", "quantite": 300, "unite": "ml", "rayon": "crèmerie"},
+        {"nom": "gruyère râpé", "quantite": 80, "unite": "g", "rayon": "crèmerie"},
+        {"nom": "sel", "quantite": 1, "unite": "pincée", "rayon": "épicerie"},
+        {"nom": "poivre", "quantite": 1, "unite": "pincée", "rayon": "épicerie"},
+        {"nom": "noix de muscade", "quantite": 1, "unite": "pincée", "rayon": "épicerie"}
+      ]
+    },
+    {
+      "id": 5,
+      "titre": "Soupe de légumes d'hiver",
+      "categorie": "soir",
+      "mois_saison": [10, 11, 12, 1, 2, 3],
+      "ingredients": [
+        {"nom": "poireaux", "quantite": 3, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "carottes", "quantite": 3, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "pommes de terre", "quantite": 400, "unite": "g", "rayon": "fruits et légumes"},
+        {"nom": "navet", "quantite": 1, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "bouillon de légumes", "quantite": 1, "unite": "cube", "rayon": "épicerie"},
+        {"nom": "sel", "quantite": 1, "unite": "pincée", "rayon": "épicerie"},
+        {"nom": "poivre", "quantite": 1, "unite": "pincée", "rayon": "épicerie"},
+        {"nom": "crème fraîche liquide", "quantite": 100, "unite": "ml", "rayon": "crèmerie"}
+      ]
+    },
+    {
+      "id": 6,
+      "titre": "Pâtes carbonara",
+      "categorie": "soir",
+      "mois_saison": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "ingredients": [
+        {"nom": "spaghetti", "quantite": 500, "unite": "g", "rayon": "épicerie"},
+        {"nom": "lardons fumés", "quantite": 200, "unite": "g", "rayon": "boucherie"},
+        {"nom": "oeufs", "quantite": 4, "unite": "pièce", "rayon": "crèmerie"},
+        {"nom": "parmesan râpé", "quantite": 80, "unite": "g", "rayon": "crèmerie"},
+        {"nom": "poivre", "quantite": 1, "unite": "pincée", "rayon": "épicerie"},
+        {"nom": "sel", "quantite": 1, "unite": "pincée", "rayon": "épicerie"}
+      ]
+    },
+    {
+      "id": 7,
+      "titre": "Ratatouille",
+      "categorie": "soir",
+      "mois_saison": [6, 7, 8, 9],
+      "ingredients": [
+        {"nom": "courgettes", "quantite": 3, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "aubergines", "quantite": 2, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "poivrons rouges", "quantite": 2, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "tomates", "quantite": 4, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "oignon", "quantite": 2, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "ail", "quantite": 3, "unite": "gousse", "rayon": "fruits et légumes"},
+        {"nom": "huile d'olive", "quantite": 5, "unite": "cuillère à soupe", "rayon": "épicerie"},
+        {"nom": "herbes de Provence", "quantite": 1, "unite": "cuillère à café", "rayon": "épicerie"},
+        {"nom": "sel", "quantite": 1, "unite": "pincée", "rayon": "épicerie"},
+        {"nom": "poivre", "quantite": 1, "unite": "pincée", "rayon": "épicerie"}
+      ]
+    },
+    {
+      "id": 8,
+      "titre": "Lentilles au saucisson",
+      "categorie": "soir",
+      "mois_saison": [9, 10, 11, 12, 1, 2, 3],
+      "ingredients": [
+        {"nom": "lentilles vertes", "quantite": 400, "unite": "g", "rayon": "épicerie"},
+        {"nom": "saucisson à cuire", "quantite": 1, "unite": "pièce", "rayon": "boucherie"},
+        {"nom": "carottes", "quantite": 2, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "oignon", "quantite": 1, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "ail", "quantite": 2, "unite": "gousse", "rayon": "fruits et légumes"},
+        {"nom": "bouillon de légumes", "quantite": 1, "unite": "cube", "rayon": "épicerie"},
+        {"nom": "thym", "quantite": 1, "unite": "bouquet", "rayon": "épicerie"},
+        {"nom": "laurier", "quantite": 2, "unite": "feuille", "rayon": "épicerie"},
+        {"nom": "moutarde", "quantite": 1, "unite": "cuillère à soupe", "rayon": "épicerie"}
+      ]
+    },
+    {
+      "id": 9,
+      "titre": "Wok de légumes au tofu",
+      "categorie": "soir",
+      "mois_saison": [4, 5, 6, 7, 8, 9],
+      "ingredients": [
+        {"nom": "tofu ferme", "quantite": 400, "unite": "g", "rayon": "épicerie"},
+        {"nom": "courgettes", "quantite": 2, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "poivrons rouges", "quantite": 1, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "pousses de soja", "quantite": 200, "unite": "g", "rayon": "fruits et légumes"},
+        {"nom": "sauce soja", "quantite": 3, "unite": "cuillère à soupe", "rayon": "épicerie"},
+        {"nom": "gingembre", "quantite": 1, "unite": "morceau", "rayon": "fruits et légumes"},
+        {"nom": "ail", "quantite": 2, "unite": "gousse", "rayon": "fruits et légumes"},
+        {"nom": "huile de sésame", "quantite": 2, "unite": "cuillère à soupe", "rayon": "épicerie"},
+        {"nom": "riz", "quantite": 300, "unite": "g", "rayon": "épicerie"}
+      ]
+    },
+    {
+      "id": 10,
+      "titre": "Blanquette de veau",
+      "categorie": "midi",
+      "mois_saison": [10, 11, 12, 1, 2, 3],
+      "ingredients": [
+        {"nom": "veau (épaule)", "quantite": 800, "unite": "g", "rayon": "boucherie"},
+        {"nom": "carottes", "quantite": 3, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "champignons de Paris", "quantite": 250, "unite": "g", "rayon": "fruits et légumes"},
+        {"nom": "oignon", "quantite": 1, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "bouquet garni", "quantite": 1, "unite": "pièce", "rayon": "épicerie"},
+        {"nom": "beurre", "quantite": 40, "unite": "g", "rayon": "crèmerie"},
+        {"nom": "farine", "quantite": 40, "unite": "g", "rayon": "épicerie"},
+        {"nom": "crème fraîche épaisse", "quantite": 200, "unite": "ml", "rayon": "crèmerie"},
+        {"nom": "jaune d'oeuf", "quantite": 2, "unite": "pièce", "rayon": "crèmerie"},
+        {"nom": "riz", "quantite": 300, "unite": "g", "rayon": "épicerie"},
+        {"nom": "sel", "quantite": 1, "unite": "pincée", "rayon": "épicerie"},
+        {"nom": "poivre", "quantite": 1, "unite": "pincée", "rayon": "épicerie"}
+      ]
+    },
+    {
+      "id": 11,
+      "titre": "Omelette aux champignons",
+      "categorie": "soir",
+      "mois_saison": [9, 10, 11, 12, 1, 2, 3, 4],
+      "ingredients": [
+        {"nom": "oeufs", "quantite": 8, "unite": "pièce", "rayon": "crèmerie"},
+        {"nom": "champignons de Paris", "quantite": 300, "unite": "g", "rayon": "fruits et légumes"},
+        {"nom": "ail", "quantite": 1, "unite": "gousse", "rayon": "fruits et légumes"},
+        {"nom": "persil", "quantite": 1, "unite": "bouquet", "rayon": "fruits et légumes"},
+        {"nom": "beurre", "quantite": 30, "unite": "g", "rayon": "crèmerie"},
+        {"nom": "sel", "quantite": 1, "unite": "pincée", "rayon": "épicerie"},
+        {"nom": "poivre", "quantite": 1, "unite": "pincée", "rayon": "épicerie"}
+      ]
+    },
+    {
+      "id": 12,
+      "titre": "Tarte aux poireaux",
+      "categorie": "soir",
+      "mois_saison": [10, 11, 12, 1, 2, 3],
+      "ingredients": [
+        {"nom": "pâte brisée", "quantite": 1, "unite": "rouleau", "rayon": "crèmerie"},
+        {"nom": "poireaux", "quantite": 4, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "oeufs", "quantite": 3, "unite": "pièce", "rayon": "crèmerie"},
+        {"nom": "crème fraîche liquide", "quantite": 250, "unite": "ml", "rayon": "crèmerie"},
+        {"nom": "gruyère râpé", "quantite": 80, "unite": "g", "rayon": "crèmerie"},
+        {"nom": "beurre", "quantite": 20, "unite": "g", "rayon": "crèmerie"},
+        {"nom": "sel", "quantite": 1, "unite": "pincée", "rayon": "épicerie"},
+        {"nom": "poivre", "quantite": 1, "unite": "pincée", "rayon": "épicerie"}
+      ]
+    },
+    {
+      "id": 13,
+      "titre": "Gazpacho",
+      "categorie": "soir",
+      "mois_saison": [6, 7, 8, 9],
+      "ingredients": [
+        {"nom": "tomates", "quantite": 800, "unite": "g", "rayon": "fruits et légumes"},
+        {"nom": "concombre", "quantite": 1, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "poivrons rouges", "quantite": 1, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "oignon", "quantite": 1, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "ail", "quantite": 2, "unite": "gousse", "rayon": "fruits et légumes"},
+        {"nom": "huile d'olive", "quantite": 4, "unite": "cuillère à soupe", "rayon": "épicerie"},
+        {"nom": "vinaigre", "quantite": 2, "unite": "cuillère à soupe", "rayon": "épicerie"},
+        {"nom": "pain rassis", "quantite": 2, "unite": "tranche", "rayon": "boulangerie"},
+        {"nom": "sel", "quantite": 1, "unite": "pincée", "rayon": "épicerie"}
+      ]
+    },
+    {
+      "id": 14,
+      "titre": "Risotto aux asperges",
+      "categorie": "midi",
+      "mois_saison": [4, 5, 6],
+      "ingredients": [
+        {"nom": "riz arborio", "quantite": 350, "unite": "g", "rayon": "épicerie"},
+        {"nom": "asperges vertes", "quantite": 500, "unite": "g", "rayon": "fruits et légumes"},
+        {"nom": "bouillon de légumes", "quantite": 1, "unite": "litre", "rayon": "épicerie"},
+        {"nom": "oignon", "quantite": 1, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "vin blanc sec", "quantite": 100, "unite": "ml", "rayon": "épicerie"},
+        {"nom": "parmesan râpé", "quantite": 80, "unite": "g", "rayon": "crèmerie"},
+        {"nom": "beurre", "quantite": 40, "unite": "g", "rayon": "crèmerie"},
+        {"nom": "huile d'olive", "quantite": 2, "unite": "cuillère à soupe", "rayon": "épicerie"},
+        {"nom": "sel", "quantite": 1, "unite": "pincée", "rayon": "épicerie"},
+        {"nom": "poivre", "quantite": 1, "unite": "pincée", "rayon": "épicerie"}
+      ]
+    },
+    {
+      "id": 15,
+      "titre": "Curry de pois chiches aux épinards",
+      "categorie": "soir",
+      "mois_saison": [1, 2, 3, 10, 11, 12],
+      "ingredients": [
+        {"nom": "pois chiches en boîte", "quantite": 2, "unite": "boîte", "rayon": "épicerie"},
+        {"nom": "épinards frais", "quantite": 300, "unite": "g", "rayon": "fruits et légumes"},
+        {"nom": "lait de coco", "quantite": 400, "unite": "ml", "rayon": "épicerie"},
+        {"nom": "tomates concassées", "quantite": 400, "unite": "g", "rayon": "épicerie"},
+        {"nom": "oignon", "quantite": 1, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "ail", "quantite": 3, "unite": "gousse", "rayon": "fruits et légumes"},
+        {"nom": "gingembre", "quantite": 1, "unite": "morceau", "rayon": "fruits et légumes"},
+        {"nom": "curry en poudre", "quantite": 2, "unite": "cuillère à café", "rayon": "épicerie"},
+        {"nom": "cumin", "quantite": 1, "unite": "cuillère à café", "rayon": "épicerie"},
+        {"nom": "huile", "quantite": 2, "unite": "cuillère à soupe", "rayon": "épicerie"},
+        {"nom": "riz", "quantite": 300, "unite": "g", "rayon": "épicerie"},
+        {"nom": "sel", "quantite": 1, "unite": "pincée", "rayon": "épicerie"}
+      ]
+    },
+    {
+      "id": 16,
+      "titre": "Poêlée de légumes printaniers",
+      "categorie": "soir",
+      "mois_saison": [4, 5, 6],
+      "ingredients": [
+        {"nom": "petits pois frais", "quantite": 400, "unite": "g", "rayon": "fruits et légumes"},
+        {"nom": "fèves", "quantite": 300, "unite": "g", "rayon": "fruits et légumes"},
+        {"nom": "asperges vertes", "quantite": 300, "unite": "g", "rayon": "fruits et légumes"},
+        {"nom": "oignon nouveau", "quantite": 4, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "menthe fraîche", "quantite": 1, "unite": "bouquet", "rayon": "fruits et légumes"},
+        {"nom": "beurre", "quantite": 30, "unite": "g", "rayon": "crèmerie"},
+        {"nom": "parmesan râpé", "quantite": 60, "unite": "g", "rayon": "crèmerie"},
+        {"nom": "sel", "quantite": 1, "unite": "pincée", "rayon": "épicerie"},
+        {"nom": "poivre", "quantite": 1, "unite": "pincée", "rayon": "épicerie"}
+      ]
+    },
+    {
+      "id": 17,
+      "titre": "Saumon en papillote",
+      "categorie": "soir",
+      "mois_saison": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "ingredients": [
+        {"nom": "pavés de saumon", "quantite": 4, "unite": "pièce", "rayon": "poissonnerie"},
+        {"nom": "citron", "quantite": 2, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "aneth", "quantite": 1, "unite": "bouquet", "rayon": "fruits et légumes"},
+        {"nom": "courgettes", "quantite": 2, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "huile d'olive", "quantite": 2, "unite": "cuillère à soupe", "rayon": "épicerie"},
+        {"nom": "sel", "quantite": 1, "unite": "pincée", "rayon": "épicerie"},
+        {"nom": "poivre", "quantite": 1, "unite": "pincée", "rayon": "épicerie"}
+      ]
+    },
+    {
+      "id": 18,
+      "titre": "Frittata aux légumes",
+      "categorie": "soir",
+      "mois_saison": [4, 5, 6, 7, 8, 9],
+      "ingredients": [
+        {"nom": "oeufs", "quantite": 8, "unite": "pièce", "rayon": "crèmerie"},
+        {"nom": "courgettes", "quantite": 2, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "poivrons rouges", "quantite": 1, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "oignon", "quantite": 1, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "feta", "quantite": 100, "unite": "g", "rayon": "crèmerie"},
+        {"nom": "huile d'olive", "quantite": 2, "unite": "cuillère à soupe", "rayon": "épicerie"},
+        {"nom": "sel", "quantite": 1, "unite": "pincée", "rayon": "épicerie"},
+        {"nom": "poivre", "quantite": 1, "unite": "pincée", "rayon": "épicerie"}
+      ]
+    },
+    {
+      "id": 19,
+      "titre": "Soupe de courge butternut",
+      "categorie": "soir",
+      "mois_saison": [9, 10, 11, 12],
+      "ingredients": [
+        {"nom": "courge butternut", "quantite": 1, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "oignon", "quantite": 1, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "ail", "quantite": 2, "unite": "gousse", "rayon": "fruits et légumes"},
+        {"nom": "lait de coco", "quantite": 200, "unite": "ml", "rayon": "épicerie"},
+        {"nom": "bouillon de légumes", "quantite": 1, "unite": "cube", "rayon": "épicerie"},
+        {"nom": "curry en poudre", "quantite": 1, "unite": "cuillère à café", "rayon": "épicerie"},
+        {"nom": "huile d'olive", "quantite": 2, "unite": "cuillère à soupe", "rayon": "épicerie"},
+        {"nom": "sel", "quantite": 1, "unite": "pincée", "rayon": "épicerie"},
+        {"nom": "poivre", "quantite": 1, "unite": "pincée", "rayon": "épicerie"}
+      ]
+    },
+    {
+      "id": 20,
+      "titre": "Gratin de chou-fleur",
+      "categorie": "soir",
+      "mois_saison": [10, 11, 12, 1, 2, 3],
+      "ingredients": [
+        {"nom": "chou-fleur", "quantite": 1, "unite": "pièce", "rayon": "fruits et légumes"},
+        {"nom": "lardons fumés", "quantite": 150, "unite": "g", "rayon": "boucherie"},
+        {"nom": "beurre", "quantite": 40, "unite": "g", "rayon": "crèmerie"},
+        {"nom": "farine", "quantite": 40, "unite": "g", "rayon": "épicerie"},
+        {"nom": "lait", "quantite": 500, "unite": "ml", "rayon": "crèmerie"},
+        {"nom": "gruyère râpé", "quantite": 100, "unite": "g", "rayon": "crèmerie"},
+        {"nom": "noix de muscade", "quantite": 1, "unite": "pincée", "rayon": "épicerie"},
+        {"nom": "sel", "quantite": 1, "unite": "pincée", "rayon": "épicerie"},
+        {"nom": "poivre", "quantite": 1, "unite": "pincée", "rayon": "épicerie"}
+      ]
+    }
+  ]
+}
