@@ -1,5 +1,18 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Java template
+# Java build output
+java/target/
+
+### Python template
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+.env
+dist/
+build/
+*.egg-info/
 # Compiled class file
 *.class
 
